@@ -34,8 +34,9 @@ namespace AgetotonRPG
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
+            graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.Dimensions.X;
+            graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.Dimensions.Y;
+            graphics.ApplyChanges();
             base.Initialize();
         }
 
@@ -48,7 +49,7 @@ namespace AgetotonRPG
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            ScreenManager.Instance.LoadContent(Content);
         }
 
         /// <summary>
@@ -57,7 +58,7 @@ namespace AgetotonRPG
         /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+            ScreenManager.Instance.UnloadContent();
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace AgetotonRPG
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            ScreenManager.Instance.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -83,7 +84,7 @@ namespace AgetotonRPG
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            ScreenManager.Instance.Draw(spriteBatch);
 
             base.Draw(gameTime);
         }
