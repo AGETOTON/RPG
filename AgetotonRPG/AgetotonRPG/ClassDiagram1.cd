@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AgetotonRPG.Characters.Character">
+    <Position X="7.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEACAAAAAAACAAAAAAAAAAIAAAAABAAAEAAABAAA=</HashCode>
+      <FileName>Characters\Character.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.1" />
+  </Class>
+  <Class Name="AgetotonRPG.Characters.PaladinHero">
+    <Position X="9.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAACAAAAAAAAAAIAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Characters\PaladinHero.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgetotonRPG.Characters.ReptileVilan">
+    <Position X="3.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAACAAAAAAAAAAIAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Characters\ReptileVilan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgetotonRPG.Characters.SorcererHero">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAACAAAAAAAAAAIAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Characters\SorcererHero.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="AgetotonRPG.Characters.ICharacter" Collapsed="true">
+    <Position X="5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAACAAAAAAAAAAIAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Characters\ICharacter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
