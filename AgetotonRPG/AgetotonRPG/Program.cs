@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AgetotonRPG.Characters;
 #endregion
 
 namespace AgetotonRPG
@@ -20,6 +21,8 @@ namespace AgetotonRPG
         {
             using (var game = new Game1())
                 game.Run();
+            PaladinHero pesho = new PaladinHero(12, 3, 5);
+            Console.WriteLine(pesho.Magic);
         }
     }
 #endif
