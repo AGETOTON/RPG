@@ -14,12 +14,12 @@ namespace AgetotonRPG
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class Game1 : Game
+    public class GameScreen : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        public Game1()
+        public GameScreen()
             : base()
         {
             graphics = new GraphicsDeviceManager(this);
