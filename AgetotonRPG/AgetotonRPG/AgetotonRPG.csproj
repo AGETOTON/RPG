@@ -40,7 +40,8 @@
     <Compile Include="Characters\PaladinHero.cs" />
     <Compile Include="Characters\SorcererHero.cs" />
     <Compile Include="Characters\ReptileVilan.cs" />
-    <Compile Include="Game1.cs" />
+    <Compile Include="GameScreen.cs" />
+    <Compile Include="MainSettings.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenManager.cs" />
@@ -59,7 +60,11 @@
     <Folder Include="Content\" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <None Include="ClassDiagram1.cd" />
+=======
+    <None Include="ClassDiagram.cd" />
+>>>>>>> origin/master
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

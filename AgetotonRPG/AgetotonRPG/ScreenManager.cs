@@ -13,10 +13,11 @@ namespace AgetotonRPG
     {
         private static ScreenManager instance;
         public Vector2 Dimensions { private set; get; }
+        public ContentManager Content { private set; get; }
 
         public ScreenManager()
         {
-            Dimensions = new Vector2(800, 600);
+            Dimensions = new Vector2(MainSettings.MAIN_WINDOW_X, MainSettings.MAIN_WINDOW_Y);
         }
 
         public static ScreenManager Instance

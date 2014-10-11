@@ -19,7 +19,7 @@ namespace AgetotonRPG
         [STAThread]
         static void Main()
         {
-            using (var game = new Game1())
+            using (var game = new GameScreen())
                 game.Run();
             PaladinHero pesho = new PaladinHero(12, 3, 5);
             Console.WriteLine(pesho.Magic);
