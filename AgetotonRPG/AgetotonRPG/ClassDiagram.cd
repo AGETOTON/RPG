@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="AgetotonRPG.Characters.Character" Collapsed="true">
-    <Position X="4.75" Y="0.75" Width="1.5" />
+    <Position X="2.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAEACAAAAAAACAAAAAAAAAAIAAAAABAAAEAAABAAA=</HashCode>
       <FileName>Characters\Character.cs</FileName>
@@ -9,24 +9,38 @@
     <Lollipop Position="0.1" />
   </Class>
   <Class Name="AgetotonRPG.Characters.PaladinHero" Collapsed="true">
-    <Position X="7" Y="2" Width="1.5" />
+    <Position X="5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAACAAAAAAAAAAIAAAAAAAAAEAAAAAAA=</HashCode>
       <FileName>Characters\PaladinHero.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AgetotonRPG.Characters.ReptileVilan" Collapsed="true">
-    <Position X="4.75" Y="2" Width="1.5" />
+    <Position X="2.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAACAAAAAAAAAAIAAAAAAAAAEAAAAAAA=</HashCode>
       <FileName>Characters\ReptileVilan.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AgetotonRPG.Characters.SorcererHero" Collapsed="true">
-    <Position X="2.5" Y="2" Width="1.5" />
+    <Position X="0.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAACAAAAAAAAAAIAAAAAAAAAEAAAAAAA=</HashCode>
       <FileName>Characters\SorcererHero.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgetotonRPG.MainSettings" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAiAAAEAAgAAABAAAwAAAAAAAAAAQAAIAAAAAE=</HashCode>
+      <FileName>MainSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AgetotonRPG.ScreenManager" Collapsed="true">
+    <Position X="8.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAgAAAgAAAAAAAAIAAABAAAAAQAAAAAAAAAQ=</HashCode>
+      <FileName>ScreenManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="AgetotonRPG.Characters.ICharacter" Collapsed="true">
