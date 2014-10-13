@@ -21,8 +21,9 @@ namespace AgetotonRPG
         {
             using (var game = new GameScreen())
                 game.Run();
-            PaladinHero pesho = new PaladinHero(12, 3, 5);
-            Console.WriteLine(pesho.Magic);
+            //PaladinHero pesho = new PaladinHero(12, 3, 5);
+            //Console.WriteLine(pesho.Magic);
+            Console.WriteLine();
         }
     }
 #endif

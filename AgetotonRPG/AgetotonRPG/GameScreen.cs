@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.GamerServices;
+using AgetotonRPG.Characters;
 #endregion
 
 namespace AgetotonRPG
@@ -37,6 +38,8 @@ namespace AgetotonRPG
             graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.Dimensions.X;
             graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.Dimensions.Y;
             graphics.ApplyChanges();
+            this.Window.AllowUserResizing = false;
+            this.Window.Title = "Agetoton RPG Game";
             base.Initialize();
         }
 
@@ -70,7 +73,7 @@ namespace AgetotonRPG
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
+            
             ScreenManager.Instance.Update(gameTime);
 
             base.Update(gameTime);
@@ -82,8 +85,6 @@ namespace AgetotonRPG
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
             ScreenManager.Instance.Draw(spriteBatch);
 
             base.Draw(gameTime);

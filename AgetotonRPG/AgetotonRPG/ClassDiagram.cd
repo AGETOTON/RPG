@@ -11,9 +11,10 @@
   <Class Name="AgetotonRPG.Characters.PaladinHero" Collapsed="true">
     <Position X="5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAACAAAAAAAAAAIAAAAAAAAAEAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Characters\PaladinHero.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="AgetotonRPG.Characters.ReptileVilan" Collapsed="true">
     <Position X="2.75" Y="2.5" Width="1.5" />
@@ -39,7 +40,7 @@
   <Class Name="AgetotonRPG.ScreenManager" Collapsed="true">
     <Position X="8.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAEAAAAgAAAgAAAAAAAAIAAABAAAAAQAAAAAAAAAQ=</HashCode>
+      <HashCode>AAYAEAAAAgAAAgAAAAAAAAIAAABgAgAAQAAAAQAAIAQ=</HashCode>
       <FileName>ScreenManager.cs</FileName>
     </TypeIdentifier>
   </Class>

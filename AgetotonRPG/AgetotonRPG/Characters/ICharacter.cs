@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AgetotonRPG.Characters
 {
-    interface ICharacter
+    public interface ICharacter
     {
         void Attack();
         void Enchant();

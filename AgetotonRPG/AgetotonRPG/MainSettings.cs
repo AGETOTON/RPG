@@ -18,5 +18,6 @@ namespace AgetotonRPG
         public const int MAX_LIFE_SORCERER = 5;        //from class SorcererHero
         public const int MAX_POWER_SORCERER = 5;        //from class SorcererHero
         public const int MAX_MAGIC_SORCERER = 10;        //from class SorcererHero
+        public const int MAX_CHARACTER_FRAMES = 32;      // from class Character
     }
 }

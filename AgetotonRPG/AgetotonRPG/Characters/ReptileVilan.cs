@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,8 +8,8 @@ namespace AgetotonRPG.Characters
 {
     class ReptileVilan: Character
     {
-        public ReptileVilan(int life, int power, int magic)
-            : base(life, power, magic)
+        public ReptileVilan(int life, int power, int magic, Texture2D texture, int rows, int columns)
+            : base(life, power, magic, texture, rows, columns)
         {
 
         }
