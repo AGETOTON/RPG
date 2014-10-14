@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using AgetotonRPG.Characters;
+using Microsoft.Xna.Framework.Input;
 
 namespace AgetotonRPG
 {
@@ -56,6 +57,9 @@ namespace AgetotonRPG
         public void Update(GameTime gameTime)
         {
             pesho.Update();
+
+            
+
         }
 
         public void Draw(SpriteBatch spriteBatch)

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,23 @@ namespace AgetotonRPG.Characters
         public abstract void Damage();
 
         public Texture2D Texture { get; set; }
+        private Rectangle sourceRectangle;
 
+        public Rectangle SourceRectangle
+        {
+            get { return sourceRectangle; }
+            set { sourceRectangle = value; }
+        }
+
+        private Rectangle destinationRectangle;
+
+        public Rectangle DestinationRectangle
+        {
+            get { return destinationRectangle; }
+            set { destinationRectangle = value; }
+        }
+        
+        
         public int Rows { get; set; }
 
         public int Columns { get; set; }
@@ -43,6 +60,11 @@ namespace AgetotonRPG.Characters
             this.CurrentFrame++;
             if (CurrentFrame == MainSettings.MAX_CHARACTER_FRAMES)
                 CurrentFrame = 0;
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            {
+                this.destinationRectangle.X += 5;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
@@ -52,8 +74,8 @@ namespace AgetotonRPG.Characters
             int row = (int)((float)CurrentFrame / (float)Columns);
             int column = CurrentFrame % Columns;
 
-            Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+            this.sourceRectangle = new Rectangle(width * column, height * row, width, height);
+            this.destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
             //spriteBatch.Begin();
             Thread.Sleep(300);
