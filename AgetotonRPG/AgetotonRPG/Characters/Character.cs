@@ -9,16 +9,16 @@ using System.Threading;
 
 namespace AgetotonRPG.Characters
 {
-    public abstract class Character : ICharacter, IAnimateSprite
+    public abstract class Character : ICharacter, IMoveable
     {
-        public Character(int life, int power, int magic, Texture2D texture, int rows, int columns)
+        public Character(int life, int power, int magic, Texture2D texture, int x, int y)
         {
             this.Life = life;
             this.Power = power;
             this.Magic = magic;
             this.Texture = texture;
-            this.Rows = rows;
-            this.Columns = columns;
+            this.X = x;
+            this.Y = y;
             this.CurrentFrame = 0;
         }
 
@@ -34,7 +34,7 @@ namespace AgetotonRPG.Characters
         public Texture2D Texture { get; set; }
         private Rectangle sourceRectangle;
 
-        public Rectangle SourceRectangle
+        private Rectangle SourceRectangle
         {
             get { return sourceRectangle; }
             set { sourceRectangle = value; }
@@ -47,41 +47,31 @@ namespace AgetotonRPG.Characters
             get { return destinationRectangle; }
             set { destinationRectangle = value; }
         }
-        
-        
-        public int Rows { get; set; }
 
-        public int Columns { get; set; }
+
+        public int X { get; set; }
+
+        public int Y { get; set; }
 
         public int CurrentFrame { get; set; }
 
-        public void Update()
+        public virtual void Update(GameTime gameTime)
         {
-            this.CurrentFrame++;
-            if (CurrentFrame == MainSettings.MAX_CHARACTER_FRAMES)
-                CurrentFrame = 0;
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Right))
-            {
-                this.destinationRectangle.X += 5;
-            }
         }
+        
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = Texture.Width / Columns;
-            int height = Texture.Height / Rows;
-            int row = (int)((float)CurrentFrame / (float)Columns);
-            int column = CurrentFrame % Columns;
+            int width = Texture.Width / 8;
+            int height = Texture.Height / 4;
+            int row = (int)((float)CurrentFrame / (float)8);
+            int column = CurrentFrame % 8;
 
             this.sourceRectangle = new Rectangle(width * column, height * row, width, height);
             this.destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
-            //spriteBatch.Begin();
-            Thread.Sleep(300);
-
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            //spriteBatch.End();
         }
     }
 }

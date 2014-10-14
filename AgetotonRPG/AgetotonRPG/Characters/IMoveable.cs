@@ -7,17 +7,17 @@ using System.Text;
 
 namespace AgetotonRPG.Characters
 {
-    public interface IAnimateSprite
+    public interface IMoveable
     {
         Texture2D Texture { get; set; }
 
-        int Rows { get; set; }
+        int X { get; set; }
 
-        int Columns { get; set; }
+        int Y { get; set; }
 
         int CurrentFrame { get; set; }
 
-        void Update();
+        void Update(GameTime gameTime);
 
         void Draw(SpriteBatch spriteBatch, Vector2 location);
     }

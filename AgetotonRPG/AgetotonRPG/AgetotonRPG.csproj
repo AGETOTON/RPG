@@ -35,7 +35,7 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Characters\IAnimateSprite.cs" />
+    <Compile Include="Characters\IMoveable.cs" />
     <Compile Include="Characters\ICharacter.cs" />
     <Compile Include="Characters\Character.cs" />
     <Compile Include="Characters\PaladinHero.cs" />

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,8 @@ namespace AgetotonRPG.Characters
 {
     public class PaladinHero : Character
     {
-        public PaladinHero(int life, int power, int magic, Texture2D texture, int rows, int columns)
-            : base(life, power, magic, texture, rows, columns)
+        public PaladinHero(int life, int power, int magic, Texture2D texture, int x, int y)
+            : base(life, power, magic, texture, x, y)
         {
         }
 
@@ -43,6 +44,35 @@ namespace AgetotonRPG.Characters
         public void IncrementScore()
         {
             this.Score += 10;
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            this.UpdateInput();
+        }
+
+        private void UpdateInput()
+        {
+            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            {
+                this.X += MainSettings.PLAYER_SPEED;
+                this.CurrentFrame = MainSettings.START_RUN_FRAME;
+
+
+            }
+            if (Keyboard.GetState().IsKeyUp(Keys.Right))
+            {
+                this.CurrentFrame = 0;
+
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.Left))
+            {
+                this.X -= MainSettings.PLAYER_SPEED;
+                if (this.X < 0)
+                {
+                    this.X = 0;
+                }
+            }
         }
     }
 }

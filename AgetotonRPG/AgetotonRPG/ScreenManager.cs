@@ -46,7 +46,7 @@ namespace AgetotonRPG
             background = Content.Load<Texture2D>("cave");
             font = Content.Load<SpriteFont>("fonts/BlackOpsOne");
 
-            pesho = new PaladinHero(12, 3, 5, Content.Load<Texture2D>("players/hero"), 4, 8);
+            pesho = new PaladinHero(12, 3, 5, Content.Load<Texture2D>("players/hero"), 300, 450);
         }
 
         public void UnloadContent()
@@ -56,25 +56,19 @@ namespace AgetotonRPG
 
         public void Update(GameTime gameTime)
         {
-            pesho.Update();
-
-            
+            pesho.Update(gameTime);
 
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin();
-
             spriteBatch.Draw(background, new Rectangle(0, 0, 800, 600), Color.White);
             spriteBatch.DrawString(font, "Score: " + pesho.Score, new Vector2(20, 560), Color.Red);
             spriteBatch.DrawString(font, "Life: " + pesho.Life, new Vector2(180, 560), Color.Green);
             spriteBatch.DrawString(font, "Power: " + pesho.Power, new Vector2(320, 560), Color.Blue);
             spriteBatch.DrawString(font, "Magic: " + pesho.Magic, new Vector2(480, 560), Color.Purple);
 
-            pesho.Draw(spriteBatch, new Vector2(300, 450));
-
-            spriteBatch.End();
+            pesho.Draw(spriteBatch, new Vector2(pesho.X, pesho.Y));
 
         }
     }

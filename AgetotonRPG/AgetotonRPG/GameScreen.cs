@@ -72,10 +72,11 @@ namespace AgetotonRPG
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
                 Exit();
-            
-            ScreenManager.Instance.Update(gameTime);
+            }
 
+            ScreenManager.Instance.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -86,7 +87,9 @@ namespace AgetotonRPG
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+            spriteBatch.Begin();
             ScreenManager.Instance.Draw(spriteBatch);
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
