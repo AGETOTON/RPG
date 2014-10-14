@@ -26,52 +26,37 @@ namespace AgetotonRPG.Characters
         public int Power { get; set; }
         public int Magic { get; set; }
 
+        public int X { get; set; }
+        public int Y { get; set; }
+        public int CurrentFrame { get; set; }
+
+        public Texture2D Texture { get; set; }
+
+        private Rectangle SourceRectangle { get; set; }
+        public Rectangle DestinationRectangle { get; set; }
+
         public abstract void Attack();
         public abstract void Enchant();
         public abstract void Heal();
         public abstract void Damage();
 
-        public Texture2D Texture { get; set; }
-        private Rectangle sourceRectangle;
-
-        private Rectangle SourceRectangle
-        {
-            get { return sourceRectangle; }
-            set { sourceRectangle = value; }
-        }
-
-        private Rectangle destinationRectangle;
-
-        public Rectangle DestinationRectangle
-        {
-            get { return destinationRectangle; }
-            set { destinationRectangle = value; }
-        }
-
-
-        public int X { get; set; }
-
-        public int Y { get; set; }
-
-        public int CurrentFrame { get; set; }
-
         public virtual void Update(GameTime gameTime)
         {
-
+            
         }
-        
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int width = Texture.Width / 8;
-            int height = Texture.Height / 4;
-            int row = (int)((float)CurrentFrame / (float)8);
-            int column = CurrentFrame % 8;
+            int width = Texture.Width / MainSettings.SPRITE_COLS;
+            int height = Texture.Height / MainSettings.SPRITE_ROWS;
+            int row = (int)((float)CurrentFrame / (float)MainSettings.SPRITE_COLS);
+            int column = CurrentFrame % MainSettings.SPRITE_COLS;
 
-            this.sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            this.destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+            this.SourceRectangle = new Rectangle(width * column, height * row, width, height);
+            this.DestinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+            Thread.Sleep(90);
 
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(Texture, DestinationRectangle, SourceRectangle, Color.White);
         }
     }
 }

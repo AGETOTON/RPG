@@ -22,6 +22,9 @@ namespace AgetotonRPG
         private SpriteFont font;
 
         private PaladinHero pesho;
+        private PaladinHero gosho;
+        Texture2D forward;
+        Texture2D backward; 
 
         public ScreenManager()
         {
@@ -45,8 +48,10 @@ namespace AgetotonRPG
         {
             background = Content.Load<Texture2D>("cave");
             font = Content.Load<SpriteFont>("fonts/BlackOpsOne");
+            forward = Content.Load<Texture2D>("players/hero");
+            backward = Content.Load<Texture2D>("players/hero_backward");
 
-            pesho = new PaladinHero(12, 3, 5, Content.Load<Texture2D>("players/hero"), 300, 450);
+            pesho = new PaladinHero(12, 3, 5, forward, 30, 450);
         }
 
         public void UnloadContent()
@@ -57,7 +62,6 @@ namespace AgetotonRPG
         public void Update(GameTime gameTime)
         {
             pesho.Update(gameTime);
-
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -69,7 +73,6 @@ namespace AgetotonRPG
             spriteBatch.DrawString(font, "Magic: " + pesho.Magic, new Vector2(480, 560), Color.Purple);
 
             pesho.Draw(spriteBatch, new Vector2(pesho.X, pesho.Y));
-
         }
     }
 }

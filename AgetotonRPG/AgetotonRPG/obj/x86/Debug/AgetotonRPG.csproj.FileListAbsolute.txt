@@ -83,3 +83,4 @@ C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\Agetot
 C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\fonts\Frijole.xnb
 C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\players\hero.xnb
 C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\AgetotonRPG\obj\x86\Debug\AgetotonRPG.csprojResolveAssemblyReference.cache
+C:\Users\Stan\Desktop\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\players\hero_backward.xnb
