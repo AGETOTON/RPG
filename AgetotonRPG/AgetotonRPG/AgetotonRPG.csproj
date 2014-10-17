@@ -41,11 +41,15 @@
     <Compile Include="Characters\PaladinHero.cs" />
     <Compile Include="Characters\SorcererHero.cs" />
     <Compile Include="Characters\ReptileVilan.cs" />
+    <Compile Include="Enemies\Enemies.cs" />
+    <Compile Include="Enemies\Enemy.cs" />
     <Compile Include="GameScreen.cs" />
     <Compile Include="MainSettings.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenManager.cs" />
+    <Compile Include="Weapons\Weapon.cs" />
+    <Compile Include="Weapons\Weapons.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

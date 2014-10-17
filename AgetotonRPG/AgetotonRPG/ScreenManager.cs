@@ -71,6 +71,9 @@ namespace AgetotonRPG
             spriteBatch.DrawString(font, "Life: " + pesho.Life, new Vector2(180, 560), Color.Green);
             spriteBatch.DrawString(font, "Power: " + pesho.Power, new Vector2(320, 560), Color.Blue);
             spriteBatch.DrawString(font, "Magic: " + pesho.Magic, new Vector2(480, 560), Color.Purple);
+            
+            spriteBatch.DrawString(font, "X: " + pesho.X, new Vector2(20, 10), Color.Aqua);
+            spriteBatch.DrawString(font, "Y: " + pesho.Y, new Vector2(180, 10), Color.Aqua);
 
             pesho.Draw(spriteBatch, new Vector2(pesho.X, pesho.Y));
         }

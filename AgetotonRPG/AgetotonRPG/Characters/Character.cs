@@ -19,7 +19,7 @@ namespace AgetotonRPG.Characters
             this.Texture = texture;
             this.X = x;
             this.Y = y;
-            this.CurrentFrame = 0;
+            this.CurrentPlayerFrame = 0;
         }
 
         public int Life { get; set; }
@@ -28,7 +28,7 @@ namespace AgetotonRPG.Characters
 
         public int X { get; set; }
         public int Y { get; set; }
-        public int CurrentFrame { get; set; }
+        public int CurrentPlayerFrame { get; set; }
 
         public Texture2D Texture { get; set; }
 
@@ -40,17 +40,45 @@ namespace AgetotonRPG.Characters
         public abstract void Heal();
         public abstract void Damage();
 
+        private bool isJumpAvailable = true;
         public virtual void Update(GameTime gameTime)
         {
             
         }
+        public void AllowJump()
+        {
+            this.isJumpAvailable = true;
+        }
+        public void MakeJump(int value)
+        {
+            if (isJumpAvailable)
+            {
+                this.Y -= value;
+                this.isJumpAvailable = false;
+                this.CurrentPlayerFrame = 7;
+                Thread thread = new Thread(() =>
+                {
+                    Thread.Sleep(200);
+                    this.Y += value;
+                    this.CurrentPlayerFrame = 0;
+                });
+                thread.Start();
+            }
+        }
 
+        public void CheckPosition()
+        {
+            if (this.X > 775)
+            {
+                this.X = 0;
+            }
+        }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             int width = Texture.Width / MainSettings.SPRITE_COLS;
             int height = Texture.Height / MainSettings.SPRITE_ROWS;
-            int row = (int)((float)CurrentFrame / (float)MainSettings.SPRITE_COLS);
-            int column = CurrentFrame % MainSettings.SPRITE_COLS;
+            int row = (int)((float)CurrentPlayerFrame / (float)MainSettings.SPRITE_COLS);
+            int column = CurrentPlayerFrame % MainSettings.SPRITE_COLS;
 
             this.SourceRectangle = new Rectangle(width * column, height * row, width, height);
             this.DestinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);

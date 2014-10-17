@@ -15,7 +15,7 @@ namespace AgetotonRPG.Characters
 
         int Y { get; set; }
 
-        int CurrentFrame { get; set; }
+        int CurrentPlayerFrame { get; set; }
 
         void Update(GameTime gameTime);
 

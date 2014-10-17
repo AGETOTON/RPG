@@ -20,7 +20,7 @@ namespace AgetotonRPG
         public const int MAX_MAGIC_SORCERER = 10;        //from class SorcererHero
         public const int START_RUN_FRAME = 24;
         public const int STOP_RUN_FRAME = 31;
-        public const int PLAYER_SPEED = 2;
+        public const int PLAYER_SPEED = 3;
         public const int SPRITE_ROWS = 4;
         public const int SPRITE_COLS = 8;
 

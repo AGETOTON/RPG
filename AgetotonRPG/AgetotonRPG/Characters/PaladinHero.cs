@@ -52,6 +52,7 @@ namespace AgetotonRPG.Characters
         public override void Update(GameTime gameTime)
         {
             this.UpdateInput();
+            base.CheckPosition();
             // other updates...
         }
 
@@ -61,23 +62,26 @@ namespace AgetotonRPG.Characters
             if (currentState.IsKeyDown(Keys.Right))
             {
                 this.X += MainSettings.PLAYER_SPEED;
-                if (this.CurrentFrame >= MainSettings.START_RUN_FRAME)
+                if (currentState.IsKeyUp(Keys.Space))
                 {
-                    this.CurrentFrame++;
-                    if (this.CurrentFrame > MainSettings.STOP_RUN_FRAME)
+                    if (this.CurrentPlayerFrame >= MainSettings.START_RUN_FRAME)
                     {
-                        this.CurrentFrame = MainSettings.START_RUN_FRAME;
+                        this.CurrentPlayerFrame++;
+                        if (this.CurrentPlayerFrame > MainSettings.STOP_RUN_FRAME)
+                        {
+                            this.CurrentPlayerFrame = MainSettings.START_RUN_FRAME;
+                        }
                     }
-                }
-                else
-                {
-                    this.CurrentFrame = MainSettings.START_RUN_FRAME;
+                    else
+                    {
+                        this.CurrentPlayerFrame = MainSettings.START_RUN_FRAME;
+                    }
                 }
             }
 
-            if (currentState.IsKeyUp(Keys.Right))
+            if (currentState.IsKeyUp(Keys.Right) && currentState.IsKeyUp(Keys.Space))
             {
-                this.CurrentFrame = 0;
+                this.CurrentPlayerFrame = 0;
             }
 
             if (currentState.IsKeyDown(Keys.Left))
@@ -88,8 +92,18 @@ namespace AgetotonRPG.Characters
                 {
                     this.X = 0;
                 }
-
             }
+
+            if (currentState.IsKeyDown(Keys.Space))
+            {
+                int jumpHigh = 40;
+                base.MakeJump(jumpHigh);
+            }
+            else if (currentState.IsKeyUp(Keys.Space))
+            {
+                base.AllowJump();
+            }
+
         }
     }
 }
