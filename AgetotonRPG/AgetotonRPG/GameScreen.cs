@@ -1,29 +1,20 @@
-﻿#region Using Statements
-using System;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Storage;
-using Microsoft.Xna.Framework.GamerServices;
-using AgetotonRPG.Characters;
-#endregion
-
-namespace AgetotonRPG
+﻿namespace AgetotonRPG
 {
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
+
     /// <summary>
     /// This is the main type for your game
     /// </summary>
     public class GameScreen : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
 
         public GameScreen()
-            : base()
         {
-            graphics = new GraphicsDeviceManager(this);
+            this.graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
 
@@ -35,9 +26,9 @@ namespace AgetotonRPG
         /// </summary>
         protected override void Initialize()
         {
-            graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.Dimensions.X;
-            graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.Dimensions.Y;
-            graphics.ApplyChanges();
+            this.graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.Dimensions.X;
+            this.graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.Dimensions.Y;
+            this.graphics.ApplyChanges();
             this.Window.AllowUserResizing = false;
             this.Window.Title = "Agetoton RPG Game";
             base.Initialize();
@@ -50,9 +41,9 @@ namespace AgetotonRPG
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
+            this.spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            ScreenManager.Instance.LoadContent(Content);
+            ScreenManager.Instance.LoadContent(this.Content);
         }
 
         /// <summary>
@@ -73,7 +64,7 @@ namespace AgetotonRPG
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             {
-                Exit();
+                this.Exit();
             }
 
             ScreenManager.Instance.Update(gameTime);
@@ -87,9 +78,9 @@ namespace AgetotonRPG
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            spriteBatch.Begin();
-            ScreenManager.Instance.Draw(spriteBatch);
-            spriteBatch.End();
+            this.spriteBatch.Begin();
+            ScreenManager.Instance.Draw(this.spriteBatch);
+            this.spriteBatch.End();
 
             base.Draw(gameTime);
         }

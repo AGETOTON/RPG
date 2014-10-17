@@ -1,21 +1,15 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AgetotonRPG.Characters
+﻿namespace AgetotonRPG.Characters
 {
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+
     public interface IMoveable
     {
-        Texture2D Texture { get; set; }
+        float X { get; set; }
 
-        int X { get; set; }
+        float Y { get; set; }
 
-        int Y { get; set; }
-
-        int CurrentPlayerFrame { get; set; }
+        int CurrentFrame { get; set; }
 
         void Update(GameTime gameTime);
 

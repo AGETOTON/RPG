@@ -8,8 +8,8 @@ namespace AgetotonRPG.Characters
 {
     class SorcererHero: Character
     {
-        public SorcererHero(int life, int power, int magic, Texture2D texture, int rows, int columns)
-            : base(life, power, magic, texture, rows, columns)
+        public SorcererHero(Texture2D texture, int rows, int columns)
+            : base(texture, rows, columns)
         {
 
         }
@@ -24,14 +24,14 @@ namespace AgetotonRPG.Characters
         }
         public override void Heal()
         {
-            this.Life += 30;
+            this.Health += 30;
             this.Power += 5;
             this.Magic += 40;
         }
 
         public override void Damage()
         {
-            this.Life -= 20;
+            this.Health -= 20;
         }
     }
 }
