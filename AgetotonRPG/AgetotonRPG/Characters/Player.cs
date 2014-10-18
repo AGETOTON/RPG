@@ -78,37 +78,35 @@
             if (currentState.IsKeyDown(Keys.Right))
             {
                 this.X += SPEED;
-                if (currentState.IsKeyUp(Keys.Space))
+                if (this.CurrentFrame >= START_RUN_FRAME)
                 {
-                    if (this.CurrentFrame >= START_RUN_FRAME)
-                    {
-                        this.CurrentFrame++;
-                        if (this.CurrentFrame > STOP_RUN_FRAME)
-                        {
-                            this.CurrentFrame = START_RUN_FRAME;
-                        }
-                    }
-                    else
+                    this.CurrentFrame++;
+                    if (this.CurrentFrame > STOP_RUN_FRAME)
                     {
                         this.CurrentFrame = START_RUN_FRAME;
                     }
                 }
-            }
-
-            if (currentState.IsKeyUp(Keys.Right) &&
-                currentState.IsKeyUp(Keys.Space) &&
-                currentState.IsKeyUp(Keys.X)) 
-            {
-                this.CurrentFrame = 0;
-            }
+                else
+                {
+                    this.CurrentFrame = START_RUN_FRAME;
+                }
+            }                        
 
             if (currentState.IsKeyDown(Keys.Left))
             {
                 this.X -= SPEED;
 
-                if (this.X < 0)
+                if (this.CurrentFrame >= START_RUN_FRAME)
                 {
-                    this.X = 0;
+                    this.CurrentFrame++;
+                    if (this.CurrentFrame > STOP_RUN_FRAME)
+                    {
+                        this.CurrentFrame = START_RUN_FRAME;
+                    }
+                }
+                else
+                {
+                    this.CurrentFrame = START_RUN_FRAME;
                 }
             }
 
@@ -124,6 +122,14 @@
             if (currentState.IsKeyDown(Keys.X))
             {
                 this.CurrentFrame = 1;
+            }
+
+            if (currentState.IsKeyUp(Keys.Right) &&
+                currentState.IsKeyUp(Keys.Space) &&
+                currentState.IsKeyUp(Keys.Left) &&
+                currentState.IsKeyUp(Keys.X))
+            {
+                this.CurrentFrame = 0;
             }
         }
 
