@@ -114,7 +114,6 @@ C:\Users\Admin\Desktop\TeamWork\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\SharpD
 C:\Users\Admin\Desktop\TeamWork\AgetotonRPG\AgetotonRPG\obj\x86\Debug\AgetotonRPG.csprojResolveAssemblyReference.cache
 C:\Users\Stan\Desktop\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\backgrounds\cave.xnb
 C:\Users\Stan\Desktop\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\characters\player.xnb
-C:\Users\Stan\Desktop\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\characters\player_oposite.xnb
 C:\Users\Stan\Desktop\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\fonts\GameOver.xnb
 F:\VisualStudio\RPG\AgetotonRPG\AgetotonRPG\obj\x86\Debug\AgetotonRPG.exe
 F:\VisualStudio\RPG\AgetotonRPG\AgetotonRPG\obj\x86\Debug\AgetotonRPG.pdb
@@ -148,3 +147,4 @@ F:\VisualStudio\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\SharpDX.XInput.xml
 F:\VisualStudio\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\SharpDX.RawInput.xml
 F:\VisualStudio\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\SharpDX.Direct3D9.xml
 F:\VisualStudio\RPG\AgetotonRPG\AgetotonRPG\obj\x86\Debug\AgetotonRPG.csprojResolveAssemblyReference.cache
+C:\Users\Stan\Desktop\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\characters\enemy.xnb

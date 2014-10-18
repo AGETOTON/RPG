@@ -67,10 +67,10 @@
     <None Include="Content\backgrounds\cave.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Content Include="Content\characters\player.xnb">
+    <Content Include="Content\characters\enemy.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\characters\player_oposite.xnb">
+    <Content Include="Content\characters\player.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Content\fonts\Audiowide.xnb">

@@ -57,7 +57,7 @@
             this.playerTexture = content.Load<Texture2D>("characters/player");
             this.player = new Player(this.playerTexture, 30, 450);
 
-            this.enemyTexture = content.Load<Texture2D>("characters/player_oposite");
+            this.enemyTexture = content.Load<Texture2D>("characters/enemy");
             for (int i = 0; i < 5; i++)
             {
                 this.CreateEnemies();

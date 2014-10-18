@@ -20,10 +20,10 @@
         private static int STRONG_DAMAGE = 9;
         private static float STRONG_SPEED = 2;
 
-        private const int SPRITE_ROWS = 4;
-        private const int SPRITE_COLS = 8;
-        public const int START_RUN_FRAME = 31;
-        public const int STOP_RUN_FRAME = 24;
+        private const int SPRITE_ROWS = 1;
+        private const int SPRITE_COLS = 3;
+        public const int START_RUN_FRAME = 2;
+        public const int STOP_RUN_FRAME = 0;
 
         public Enemy(Texture2D texture, int x, int y, Enemies complexity)
             : base(texture, x, y)
