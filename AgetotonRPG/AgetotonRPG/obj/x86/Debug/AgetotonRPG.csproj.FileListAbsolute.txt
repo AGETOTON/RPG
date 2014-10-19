@@ -77,10 +77,7 @@ C:\Users\Stan\Desktop\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\font
 C:\Users\Stan\Desktop\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\fonts\BlackOpsOne.xnb
 C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\fonts\Audiowide.xnb
 C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\fonts\BlackOpsOne.xnb
-C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\cave.xnb
 C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\fonts\Frijole.xnb
-C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\players\hero.xnb
-C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\AgetotonRPG\obj\x86\Debug\AgetotonRPG.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Desktop\TeamWork\AgetotonRPG\AgetotonRPG\obj\x86\Debug\AgetotonRPG.exe
 C:\Users\Admin\Desktop\TeamWork\AgetotonRPG\AgetotonRPG\obj\x86\Debug\AgetotonRPG.pdb
 C:\Users\Admin\Desktop\TeamWork\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\players\hero_backward.xnb
@@ -148,3 +145,8 @@ F:\VisualStudio\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\SharpDX.Direct3D9.
 F:\VisualStudio\RPG\AgetotonRPG\AgetotonRPG\obj\x86\Debug\AgetotonRPG.csprojResolveAssemblyReference.cache
 C:\Users\Stan\Desktop\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\characters\enemy.xnb
 F:\VisualStudio\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\characters\enemy.xnb
+C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\characters\player.xnb
+C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\fonts\GameOver.xnb
+C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\backgrounds\cave.xnb
+C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\characters\enemy.xnb
+C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\characters\blueEnemy.xnb
