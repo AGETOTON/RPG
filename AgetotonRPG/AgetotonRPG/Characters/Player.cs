@@ -23,7 +23,7 @@
 
         public const int JUMP_HEIGTH = 50;
 
-        public const int SPRITE_ROWS = 4;
+        public const int SPRITE_ROWS = 8;
 
         public const int SPRITE_COLS = 8;
 
@@ -96,17 +96,17 @@
             {
                 this.X -= SPEED;
 
-                if (this.CurrentFrame >= START_RUN_FRAME)
+                if (this.CurrentFrame >= START_RUN_FRAME+32)
                 {
                     this.CurrentFrame++;
-                    if (this.CurrentFrame > STOP_RUN_FRAME)
+                    if (this.CurrentFrame > STOP_RUN_FRAME+32)
                     {
-                        this.CurrentFrame = START_RUN_FRAME;
+                        this.CurrentFrame = START_RUN_FRAME+32;
                     }
                 }
                 else
                 {
-                    this.CurrentFrame = START_RUN_FRAME;
+                    this.CurrentFrame = START_RUN_FRAME+32;
                 }
             }
 

@@ -82,6 +82,10 @@
             {
                 this.X = 0;
             }
+            if (this.X < 0)
+            {
+                this.X =775;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
