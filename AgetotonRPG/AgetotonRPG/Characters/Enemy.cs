@@ -20,7 +20,7 @@
         private static int STRONG_DAMAGE = 9;
         private static float STRONG_SPEED = 2;
 
-        private const int SPRITE_ROWS = 1;
+        private const int SPRITE_ROWS = 2;
         private const int SPRITE_COLS = 3;
         public const int START_RUN_FRAME = 2;
         public const int STOP_RUN_FRAME = 0;
@@ -78,25 +78,45 @@
         {
             this.X -= this.Speed;
 
-            if (this.CurrentFrame <= START_RUN_FRAME)
+            if (this.Speed > 0)
             {
-                this.CurrentFrame--;
-                if (this.CurrentFrame < STOP_RUN_FRAME)
+                if (this.CurrentFrame <= START_RUN_FRAME)
+                {
+                    this.CurrentFrame--;
+                    if (this.CurrentFrame < STOP_RUN_FRAME)
+                    {
+                        this.CurrentFrame = START_RUN_FRAME;
+                    }
+                }
+                else
                 {
                     this.CurrentFrame = START_RUN_FRAME;
+                } 
+            }
+
+            if (this.Speed < 0)
+            {
+                if (this.CurrentFrame <= START_RUN_FRAME+3)
+                {
+                    this.CurrentFrame--;
+                    if (this.CurrentFrame < STOP_RUN_FRAME+3)
+                    {
+                        this.CurrentFrame = START_RUN_FRAME+3;
+                    }
+                }
+                else
+                {
+                    this.CurrentFrame = START_RUN_FRAME+3;
                 }
             }
-            else
-            {
-                this.CurrentFrame = START_RUN_FRAME;
-            }
+            
             if (this.X > 775)
             {
-                this.Speed = -this.Speed;
+                this.Speed = -this.Speed * 1.05f;
             }
             if (this.X < 0)
             {
-                this.Speed = -this.Speed;
+                this.Speed = -this.Speed * 1.05f;
             }
         }
 
