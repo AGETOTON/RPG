@@ -90,7 +90,14 @@
             {
                 this.CurrentFrame = START_RUN_FRAME;
             }
-
+            if (this.X > 775)
+            {
+                this.Speed = -this.Speed;
+            }
+            if (this.X < 0)
+            {
+                this.Speed = -this.Speed;
+            }
         }
 
         public new void Draw(SpriteBatch spriteBatch, Vector2 location)
