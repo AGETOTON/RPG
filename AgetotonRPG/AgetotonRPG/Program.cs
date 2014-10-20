@@ -1,7 +1,7 @@
 ﻿namespace AgetotonRPG
 {
     using System;
-    
+
 #if WINDOWS || LINUX
     /// <summary>
     /// The main class.

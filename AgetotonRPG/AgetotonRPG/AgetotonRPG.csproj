@@ -35,15 +35,17 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Characters\IMoveable.cs" />
-    <Compile Include="Characters\ICharacter.cs" />
+    <Compile Include="Exceptions\RuntimeException.cs" />
+    <Compile Include="Interfaces\IMoveable.cs" />
+    <Compile Include="Interfaces\ICharacter.cs" />
     <Compile Include="Characters\Character.cs" />
     <Compile Include="Characters\Player.cs" />
     <Compile Include="Characters\SorcererHero.cs" />
     <Compile Include="Characters\ReptileVilan.cs" />
     <Compile Include="Characters\Enemies.cs" />
     <Compile Include="Characters\Enemy.cs" />
-    <Compile Include="GameException.cs" />
+    <Compile Include="Coin.cs" />
+    <Compile Include="Exceptions\GameException.cs" />
     <Compile Include="GameScreen.cs" />
     <Compile Include="MainSettings.cs" />
     <Compile Include="Program.cs" />
@@ -76,6 +78,9 @@
     <Content Include="Content\characters\blueEnemy.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\characters\monster.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Content\fonts\Audiowide.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -88,10 +93,11 @@
     <Content Include="Content\fonts\GameOver.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\stuff\coin.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Enemies\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

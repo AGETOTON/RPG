@@ -1,5 +1,7 @@
 ﻿namespace AgetotonRPG.Characters
 {
+    using AgetotonRPG.Interfaces;
+
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
     using System.Threading;

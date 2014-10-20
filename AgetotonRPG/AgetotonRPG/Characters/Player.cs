@@ -19,7 +19,7 @@
 
         public const int STOP_RUN_FRAME = 31;
 
-        public const float SPEED = 1.5f;
+        public const float SPEED = 2;
 
         public const int JUMP_HEIGTH = 50;
 

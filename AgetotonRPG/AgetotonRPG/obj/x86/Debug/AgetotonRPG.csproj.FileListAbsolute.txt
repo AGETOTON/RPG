@@ -151,3 +151,6 @@ C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\Agetot
 C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\characters\enemy.xnb
 C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\characters\blueEnemy.xnb
 F:\VisualStudio\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\characters\blueEnemy.xnb
+C:\Users\Stan\Desktop\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\characters\blueEnemy.xnb
+C:\Users\Stan\Desktop\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\characters\monster.xnb
+C:\Users\Stan\Desktop\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\stuff\coin.xnb

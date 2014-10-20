@@ -1,5 +1,9 @@
 ﻿namespace AgetotonRPG
 {
+    using System;
+
+    using AgetotonRPG.Exceptions;
+
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
@@ -43,7 +47,14 @@
             // Create a new SpriteBatch, which can be used to draw textures.
             this.spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            ScreenManager.Instance.LoadContent(this.Content);
+            try
+            {
+                ScreenManager.Instance.LoadContent(this.Content);
+            }
+            catch (Exception)
+            {
+                throw new RuntimeException("Can not load content!");
+            }
         }
 
         /// <summary>
