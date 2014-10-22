@@ -143,7 +143,6 @@ F:\VisualStudio\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\SharpDX.XInput.xml
 F:\VisualStudio\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\SharpDX.RawInput.xml
 F:\VisualStudio\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\SharpDX.Direct3D9.xml
 F:\VisualStudio\RPG\AgetotonRPG\AgetotonRPG\obj\x86\Debug\AgetotonRPG.csprojResolveAssemblyReference.cache
-C:\Users\Stan\Desktop\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\characters\enemy.xnb
 F:\VisualStudio\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\characters\enemy.xnb
 C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\characters\player.xnb
 C:\Users\SESA29880\Documents\Projects\_SoftUni-OOP\GitHub\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\fonts\GameOver.xnb
@@ -154,3 +153,4 @@ F:\VisualStudio\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\characters
 C:\Users\Stan\Desktop\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\characters\blueEnemy.xnb
 C:\Users\Stan\Desktop\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\characters\monster.xnb
 C:\Users\Stan\Desktop\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\stuff\coin.xnb
+C:\Users\Stan\Desktop\RPG\AgetotonRPG\AgetotonRPG\bin\Windows\Debug\Content\stuff\aid.xnb

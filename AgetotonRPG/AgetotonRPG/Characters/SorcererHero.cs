@@ -33,5 +33,10 @@ namespace AgetotonRPG.Characters
         {
             this.Health -= 20;
         }
+
+        public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

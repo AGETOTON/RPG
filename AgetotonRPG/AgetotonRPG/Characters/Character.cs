@@ -1,13 +1,16 @@
 ﻿namespace AgetotonRPG.Characters
 {
+    using System.Threading;
     using AgetotonRPG.Interfaces;
-
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
-    using System.Threading;
 
     public abstract class Character : ICharacter, IMoveable
     {
+        protected int SPRITE_ROWS;
+        protected int SPRITE_COLS;
+        protected int START_RUN_FRAME;
+        protected int STOP_RUN_FRAME;
         protected Character(Texture2D texture, float x, float y)
         {
             this.Texture = texture;
@@ -50,10 +53,7 @@
         public abstract void Damage();
 
 
-        public virtual void Update(GameTime gameTime)
-        {
-            //this.Update(gameTime);
-        }
+        public abstract void Update(GameTime gameTime);
 
         protected void AllowJump()
         {
@@ -84,15 +84,26 @@
             {
                 this.X = 0;
             }
+
             if (this.X < 0)
             {
-                this.X =775;
+                this.X = 775;
             }
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            this.Draw(spriteBatch, location);
+            int width = this.Texture.Width / this.SPRITE_COLS;
+            int height = this.Texture.Height / this.SPRITE_ROWS;
+            int row = this.CurrentFrame / this.SPRITE_COLS;
+            int column = this.CurrentFrame % this.SPRITE_COLS;
+
+            this.SourceRectangle = new Rectangle(width * column, height * row, width, height);
+            this.DestinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
+
+            Thread.Sleep(15);
+
+            spriteBatch.Draw(this.Texture, this.DestinationRectangle, this.SourceRectangle, Color.White);
         }
     }
 }

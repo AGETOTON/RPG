@@ -1,6 +1,5 @@
 ﻿namespace AgetotonRPG.Characters
 {
-    using System.Threading;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework.Input;
@@ -15,17 +14,9 @@
 
         public const int MAX_MAGIC = 10;
 
-        public const int START_RUN_FRAME = 24;
-
-        public const int STOP_RUN_FRAME = 31;
-
         public const float SPEED = 2;
 
         public const int JUMP_HEIGTH = 50;
-
-        public const int SPRITE_ROWS = 8;
-
-        public const int SPRITE_COLS = 8;
 
         public Player(Texture2D texture, float x, float y)
             : base(texture, x, y)
@@ -34,6 +25,10 @@
             this.Health = MAX_HEALTH;
             this.Power = MAX_POWER;
             this.Magic = MAX_MAGIC;
+            this.SPRITE_ROWS = 8;
+            this.SPRITE_COLS = 8;
+            this.START_RUN_FRAME = 24;
+            this.STOP_RUN_FRAME = 31;
         }
 
         public int Score { get; private set; }
@@ -90,23 +85,23 @@
                 {
                     this.CurrentFrame = START_RUN_FRAME;
                 }
-            }                        
+            }
 
             if (currentState.IsKeyDown(Keys.Left))
             {
                 this.X -= SPEED;
 
-                if (this.CurrentFrame >= START_RUN_FRAME+32)
+                if (this.CurrentFrame >= START_RUN_FRAME + 32)
                 {
                     this.CurrentFrame++;
-                    if (this.CurrentFrame > STOP_RUN_FRAME+32)
+                    if (this.CurrentFrame > STOP_RUN_FRAME + 32)
                     {
-                        this.CurrentFrame = START_RUN_FRAME+32;
+                        this.CurrentFrame = START_RUN_FRAME + 32;
                     }
                 }
                 else
                 {
-                    this.CurrentFrame = START_RUN_FRAME+32;
+                    this.CurrentFrame = START_RUN_FRAME + 32;
                 }
             }
 
@@ -131,21 +126,6 @@
             {
                 this.CurrentFrame = 0;
             }
-        }
-
-        public new void Draw(SpriteBatch spriteBatch, Vector2 location)
-        {
-            int width = this.Texture.Width / SPRITE_COLS;
-            int height = this.Texture.Height / SPRITE_ROWS;
-            int row = this.CurrentFrame / SPRITE_COLS;
-            int column = this.CurrentFrame % SPRITE_COLS;
-
-            this.SourceRectangle = new Rectangle(width * column, height * row, width, height);
-            this.DestinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
-
-            Thread.Sleep(90);
-
-            spriteBatch.Draw(this.Texture, this.DestinationRectangle, this.SourceRectangle, Color.White);
         }
     }
 }
