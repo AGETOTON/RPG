@@ -1,0 +1,10 @@
+C:\Users\Admin\Desktop\RPG\GameName1\bin\WindowsGL\Debug\SDL.dll
+C:\Users\Admin\Desktop\RPG\GameName1\bin\WindowsGL\Debug\GameName1.exe
+C:\Users\Admin\Desktop\RPG\GameName1\bin\WindowsGL\Debug\GameName1.pdb
+C:\Users\Admin\Desktop\RPG\GameName1\bin\WindowsGL\Debug\Lidgren.Network.dll
+C:\Users\Admin\Desktop\RPG\GameName1\bin\WindowsGL\Debug\MonoGame.Framework.dll
+C:\Users\Admin\Desktop\RPG\GameName1\bin\WindowsGL\Debug\OpenTK.dll
+C:\Users\Admin\Desktop\RPG\GameName1\bin\WindowsGL\Debug\Tao.Sdl.dll
+C:\Users\Admin\Desktop\RPG\GameName1\obj\x86\Debug\GameName1.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\RPG\GameName1\obj\x86\Debug\GameName1.exe
+C:\Users\Admin\Desktop\RPG\GameName1\obj\x86\Debug\GameName1.pdb
