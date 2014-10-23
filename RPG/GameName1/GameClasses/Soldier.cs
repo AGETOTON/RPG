@@ -176,8 +176,8 @@ namespace AgetotonRPG.GameClasses
 
                 Thread thread = new Thread(() =>
                 {
-                    Thread.Sleep(180);
-                    base.Y += SoldierConstants.JUMP_HEIGTH;
+                    Thread.Sleep(150);
+                    base.Y = ScreenConstants.POSTION_CREATURE_Y;
 
                     if (base.CurrentDirection == Direction.Right)
                     {
@@ -203,8 +203,8 @@ namespace AgetotonRPG.GameClasses
 
                 Thread thread = new Thread(() =>
                 {
-                    Thread.Sleep(180);
-                    this.Y += SoldierConstants.JUMP_HEIGTH;
+                    Thread.Sleep(150);
+                    this.Y = ScreenConstants.POSTION_CREATURE_Y;
                     this.CurrentFrame = SoldierFramesConstants.START_RIGHT_WALK_FRAME;
                 });
                 thread.Start();
@@ -222,8 +222,8 @@ namespace AgetotonRPG.GameClasses
 
                 Thread thread = new Thread(() =>
                 {
-                    Thread.Sleep(180);
-                    this.Y += SoldierConstants.JUMP_HEIGTH;
+                    Thread.Sleep(150);
+                    this.Y = ScreenConstants.POSTION_CREATURE_Y;
                     this.CurrentFrame = SoldierFramesConstants.START_LEFT_WALK_FRAME;
                 });
                 thread.Start();
@@ -299,7 +299,7 @@ namespace AgetotonRPG.GameClasses
             {
                 for (int i = 0; i < 200; i++)
                 {
-                    Thread.Sleep(3);
+                    Thread.Sleep(2);
                     base.Y++;
                 }
             }

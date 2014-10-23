@@ -13,7 +13,6 @@ using AgetotonRPG.GameEnums;
 
 namespace AgetotonRPG
 {
-
     public class ScreenManager
     {
         private static ScreenManager instance;
@@ -35,6 +34,10 @@ namespace AgetotonRPG
         private bool isNewKillAvailable = true;
         private bool canIAddLives = true;
         private bool canITakeLives = true;
+        private bool canIAllowJump = true;
+
+        private double totalGameTimeInSeconds = 0;
+        private double lastJumpInGame = 0;
 
         public ScreenManager()
         {
@@ -81,6 +84,7 @@ namespace AgetotonRPG
 
         public void Update(GameTime gameTime)
         {
+            this.totalGameTimeInSeconds = gameTime.TotalGameTime.TotalSeconds;
             GetKeyboardInputs();
             this.enemy.Move();
             this.enemy.TryAtack();
@@ -114,7 +118,14 @@ namespace AgetotonRPG
             }
             if (currentState.IsKeyUp(Keys.Space))
             {
-                this.player.AllowJump();
+                if (canIAllowJump)
+                {
+                    if (this.lastJumpInGame + 0.4 < this.totalGameTimeInSeconds)
+                    {
+                        this.lastJumpInGame = totalGameTimeInSeconds;
+                        this.player.AllowJump();
+                    }
+                }
             }
             if (currentState.IsKeyDown(Keys.X))
             {
@@ -170,7 +181,7 @@ namespace AgetotonRPG
                     {
                         this.enemy = new Enemy(this.enemyTexture, coordinates, 440, EnemyComplexity.Strong);
                     }
-                    
+
                 }
 
                 this.enemy.Target = this.player;
@@ -218,6 +229,7 @@ namespace AgetotonRPG
                 if (this.player.X >= 70 && this.player.X <= 90 || this.player.X >= 272 && this.player.X <= 280)
                 {
                     this.player.Fall();
+                    this.canIAllowJump = false;
                     if (this.canITakeLives)
                     {
                         this.player.Lives--;
@@ -230,8 +242,9 @@ namespace AgetotonRPG
                         if (this.player.IsAlive())
                         {
                             RespownPlayer();
+                            this.player.Health = SoldierConstants.START_HEALTH;
                         }
-
+                        this.canIAllowJump = true;
                         this.canITakeLives = true;
                     });
                     thread.Start();
@@ -243,7 +256,7 @@ namespace AgetotonRPG
             if (this.enemy.X >= 400)
             {
                 this.player.X = ScreenConstants.START_SCREEN;
-                
+
                 this.player.CanMoveRight = true;
             }
             else
@@ -252,7 +265,23 @@ namespace AgetotonRPG
 
                 this.player.CanMoveLeft = true;
             }
-            this.player.Y = ScreenConstants.POSTION_CREATURE_Y;
+
+            Thread thread = new Thread(() =>
+            {
+                this.canIAllowJump = false;
+                this.player.Y = 350;
+                while (this.player.Y < ScreenConstants.POSTION_CREATURE_Y)
+                {
+                    Thread.Sleep(4);
+                    this.player.Y++;
+                }
+                if (this.player.Y != ScreenConstants.POSTION_CREATURE_Y)
+                {
+                    this.player.Y = ScreenConstants.POSTION_CREATURE_Y;
+                }
+                this.canIAllowJump = true;
+            });
+            thread.Start();
         }
 
         public void CreateNewGame()

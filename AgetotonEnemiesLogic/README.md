@@ -1,4 +1,0 @@
-RPG
-===
-
-Agetoton RPG

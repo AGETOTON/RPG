@@ -81,7 +81,9 @@
       <Link>SDL.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icon.ico" />
+    <Content Include="Icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -94,7 +96,7 @@
     <Content Include="Content\characters\enemy.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="GameClassDiagram.cd" />
     <None Include="Content\characters\player.xnb" />
     <Content Include="Content\characters\solider.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
