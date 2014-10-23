@@ -66,9 +66,8 @@
             {
                 this.Exit();
             }
-
             ScreenManager.Instance.Update(gameTime);
-
+            
             base.Update(gameTime);
         }
 

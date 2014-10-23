@@ -39,12 +39,14 @@
     <Compile Include="GameClasses\Enemy.cs" />
     <Compile Include="GameClasses\Soldier.cs" />
     <Compile Include="GameConstants\AverageEnemyConstants.cs" />
+    <Compile Include="GameConstants\EnemyBoss.cs" />
     <Compile Include="GameConstants\EnemyFrameConstants.cs" />
     <Compile Include="GameConstants\SoldierConstants.cs" />
     <Compile Include="GameConstants\ScreenConstants.cs" />
     <Compile Include="GameConstants\SoldierFramesConstants.cs" />
     <Compile Include="GameConstants\StrongEnemyConstants.cs" />
     <Compile Include="GameConstants\WeakEnemyConstants.cs" />
+    <Compile Include="GameEnums\Bosses.cs" />
     <Compile Include="GameEnums\Direction.cs" />
     <Compile Include="GameEnums\EnemyComplexity.cs" />
     <Compile Include="GameInterfaces\ICreature.cs" />
@@ -92,6 +94,7 @@
     <Content Include="Content\characters\enemy.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Content\characters\player.xnb" />
     <Content Include="Content\characters\solider.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

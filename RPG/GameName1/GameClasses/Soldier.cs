@@ -28,14 +28,14 @@ namespace AgetotonRPG.GameClasses
             : base
             (texture, x, y)
         {
-            base.CurrentFrame = SoldierFramesConstants.START_RIGHT_WALK_FRAME; 
+            base.CurrentFrame = SoldierFramesConstants.START_RIGHT_WALK_FRAME;
             base.CurrentDirection = SoldierConstants.START_DIRECTION;
-            base.Health = SoldierConstants.START_HEALTH; 
-            base.Damage = SoldierConstants.DAMAGE; 
+            base.Health = SoldierConstants.START_HEALTH;
+            base.Damage = SoldierConstants.DAMAGE;
             base.Speed = SoldierConstants.SPEED;
 
-            this.lives = SoldierConstants.START_LIVES; 
-            this.playerCurrentFrame = SoldierFramesConstants.START_RIGHT_WALK_FRAME; 
+            this.lives = SoldierConstants.START_LIVES;
+            this.playerCurrentFrame = SoldierFramesConstants.START_RIGHT_WALK_FRAME;
 
         }
         public int Lives
@@ -66,19 +66,19 @@ namespace AgetotonRPG.GameClasses
         {
             if (base.CurrentDirection == Direction.Right)
             {
-                if (this.lastFrame == SoldierFramesConstants.BEGIN_RIGHT_LEG_STEP_RIGHT_SIDE) 
+                if (this.lastFrame == SoldierFramesConstants.BEGIN_RIGHT_LEG_STEP_RIGHT_SIDE)
                 {
-                    base.CurrentFrame = SoldierFramesConstants.STEP_RIGHT_LEG_RIGHT_SIDE; 
+                    base.CurrentFrame = SoldierFramesConstants.STEP_RIGHT_LEG_RIGHT_SIDE;
                 }
-                else if (this.lastFrame == SoldierFramesConstants.BEGIN_LEFT_LEG_STEP_RIGHT_SIDE) 
+                else if (this.lastFrame == SoldierFramesConstants.BEGIN_LEFT_LEG_STEP_RIGHT_SIDE)
                 {
-                    base.CurrentFrame = SoldierFramesConstants.START_RIGHT_WALK_FRAME; 
+                    base.CurrentFrame = SoldierFramesConstants.START_RIGHT_WALK_FRAME;
                 }
 
             }
             else if (base.CurrentDirection == Direction.Left)
             {
-                if (this.lastFrame == SoldierFramesConstants.BEGIN_LEFT_LEG_STEP_LEFT_SIDE) 
+                if (this.lastFrame == SoldierFramesConstants.BEGIN_LEFT_LEG_STEP_LEFT_SIDE)
                 {
                     base.CurrentFrame = SoldierFramesConstants.STEP_LEFT_LEG_LEFT_SIDE;
                 }
@@ -96,10 +96,10 @@ namespace AgetotonRPG.GameClasses
                 base.X += base.Speed;
                 CheckSoldierPosition();
                 base.CurrentDirection = Direction.Right;
-                if (base.CurrentFrame >= SoldierFramesConstants.START_RIGHT_WALK_FRAME) 
+                if (base.CurrentFrame >= SoldierFramesConstants.START_RIGHT_WALK_FRAME)
                 {
                     base.CurrentFrame++;
-                    if (base.CurrentFrame > SoldierFramesConstants.STOP_RIGHT_WALK_FRAME) 
+                    if (base.CurrentFrame > SoldierFramesConstants.STOP_RIGHT_WALK_FRAME)
                     {
                         base.CurrentFrame = SoldierFramesConstants.START_RIGHT_WALK_FRAME;
                     }
@@ -160,7 +160,12 @@ namespace AgetotonRPG.GameClasses
         {
             this.isJumpAvailable = true;
         }
-
+        public void Die()
+        {
+            base.CanMoveLeft = false;
+            base.CanMoveRight = false;
+            this.isShootAvailable = false;
+        }
         public void JumpUp()
         {
             if (this.isJumpAvailable)
@@ -270,7 +275,7 @@ namespace AgetotonRPG.GameClasses
                     {
                         base.X += 3; // this here is the recoil otkata
                     }
-                    
+
                     Thread thread = new Thread(() =>
                     {
                         Thread.Sleep(60);
@@ -288,7 +293,19 @@ namespace AgetotonRPG.GameClasses
                 }
             }
         }
-
+        public void Fall()
+        {
+            Thread thread = new Thread(() =>
+            {
+                for (int i = 0; i < 200; i++)
+                {
+                    Thread.Sleep(3);
+                    base.Y++;
+                }
+            }
+            );
+            thread.Start();
+        }
         public override void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             int width = base.Texture.Width / SoldierFramesConstants.SPRITE_COLS;

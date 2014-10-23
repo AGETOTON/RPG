@@ -26,15 +26,15 @@ namespace AgetotonRPG
         private SpriteFont gameOver;
 
 
-        private Soldier player;
+        public Soldier player;
         private Enemy enemy;
 
         Texture2D playerTexture;
         Texture2D enemyTexture;
 
         private bool isNewKillAvailable = true;
-        private bool canIRakeLive = true;
         private bool canIAddLives = true;
+        private bool canITakeLives = true;
 
         public ScreenManager()
         {
@@ -61,7 +61,7 @@ namespace AgetotonRPG
             this.gameOver = content.Load<SpriteFont>("fonts/GameOver");
 
             this.enemyTexture = content.Load<Texture2D>("characters/blueEnemy");
-            this.enemy = new Enemy(this.enemyTexture, 600, 440, EnemyComplexity.Weak);
+            this.enemy = new Enemy(this.enemyTexture, 700, 440, EnemyComplexity.Weak);
 
             this.playerTexture = content.Load<Texture2D>("characters/solider");
             this.player = new Soldier
@@ -140,15 +140,37 @@ namespace AgetotonRPG
                 float coordinates = rnd.Next(300, 700);
                 if (this.player.Kills < 20)
                 {
-                    this.enemy = new Enemy(this.enemyTexture, coordinates, 440, EnemyComplexity.Weak);
+                    if (this.player.Kills == 19)
+                    {
+                        this.enemy = new Enemy(this.enemyTexture, coordinates, 440, Bosses.Weak);
+                    }
+                    else
+                    {
+                        this.enemy = new Enemy(this.enemyTexture, coordinates, 440, EnemyComplexity.Weak);
+                    }
                 }
-                else if (this.player.Kills < 40 && this.player.Kills > 20)
+                else if (this.player.Kills >= 20 && this.player.Kills < 40)
                 {
-                    this.enemy = new Enemy(this.enemyTexture, coordinates, 440, EnemyComplexity.Average);
+                    if (this.player.Kills == 39)
+                    {
+                        this.enemy = new Enemy(this.enemyTexture, coordinates, 440, Bosses.Average);
+                    }
+                    else
+                    {
+                        this.enemy = new Enemy(this.enemyTexture, coordinates, 440, EnemyComplexity.Average);
+                    }
                 }
                 else
                 {
-                    this.enemy = new Enemy(this.enemyTexture, coordinates, 440, EnemyComplexity.Strong);
+                    if (this.player.Kills == 60 || this.player.Kills % 8 == 0)
+                    {
+                        this.enemy = new Enemy(this.enemyTexture, coordinates, 440, Bosses.Strong);
+                    }
+                    else
+                    {
+                        this.enemy = new Enemy(this.enemyTexture, coordinates, 440, EnemyComplexity.Strong);
+                    }
+                    
                 }
 
                 this.enemy.Target = this.player;
@@ -168,7 +190,11 @@ namespace AgetotonRPG
             {
                 this.player.Lives--;
                 this.player.Health = SoldierConstants.START_HEALTH;
-                RespownPlayer();
+
+                if (this.player.IsAlive())
+                {
+                    RespownPlayer();
+                }
             }
         }
 
@@ -179,7 +205,7 @@ namespace AgetotonRPG
                 this.player.Lives++;
                 this.canIAddLives = false;
             }
-            else if(this.player.Kills % 15 != 0)
+            else if (this.player.Kills % 15 != 0)
             {
                 this.canIAddLives = true;
             }
@@ -191,25 +217,24 @@ namespace AgetotonRPG
             {
                 if (this.player.X >= 70 && this.player.X <= 90 || this.player.X >= 272 && this.player.X <= 280)
                 {
+                    this.player.Fall();
+                    if (this.canITakeLives)
+                    {
+                        this.player.Lives--;
+                        this.canITakeLives = false;
+                    }
                     Thread thread = new Thread(() =>
                     {
-                        for (int i = 0; i < 200; i++)
+                        Thread.Sleep(1200);
+
+                        if (this.player.IsAlive())
                         {
-                            Thread.Sleep(5);
-                            this.player.Y++;
+                            RespownPlayer();
                         }
 
-                        RespownPlayer();
-                    }
-                    );
+                        this.canITakeLives = true;
+                    });
                     thread.Start();
-
-                    if (this.canIRakeLive)
-                    {
-                        this.canIRakeLive = false;
-                        this.player.Lives--;
-                    }
-
                 }
             }
         }
@@ -218,26 +243,35 @@ namespace AgetotonRPG
             if (this.enemy.X >= 400)
             {
                 this.player.X = ScreenConstants.START_SCREEN;
-                this.player.Y = ScreenConstants.POSTION_CREATURE_Y;
+                
                 this.player.CanMoveRight = true;
             }
             else
             {
                 this.player.X = ScreenConstants.END_SCREEN;
-                this.player.Y = ScreenConstants.POSTION_CREATURE_Y;
+
                 this.player.CanMoveLeft = true;
             }
+            this.player.Y = ScreenConstants.POSTION_CREATURE_Y;
+        }
 
-            this.canIRakeLive = true;
+        public void CreateNewGame()
+        {
+            this.player = new Soldier
+               (this.playerTexture, ScreenConstants.START_PLAYER_POSITION_X, ScreenConstants.POSTION_CREATURE_Y);
+            this.enemy = new Enemy(this.enemyTexture, 700, 440, EnemyComplexity.Weak);
+
+            this.player.Target = this.enemy;
+            this.enemy.Target = this.player;
         }
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(this.background, new Rectangle(0, 0, 800, 600), Color.White);
-            spriteBatch.DrawString(this.info, "Health: " + this.player.Health, new Vector2(20, 10), Color.Red);
-            spriteBatch.DrawString(this.info, "Lives: " + this.player.Lives, new Vector2(20, 40), Color.YellowGreen);
+            spriteBatch.DrawString(this.info, "HEALTH: " + this.player.Health, new Vector2(20, 10), Color.DarkOrange);
+            spriteBatch.DrawString(this.info, "LIVES: " + this.player.Lives, new Vector2(20, 40), Color.YellowGreen);
 
-            spriteBatch.DrawString(this.info, "Enemy Health " + this.enemy.Health, new Vector2(620, 20), Color.AntiqueWhite);
-            spriteBatch.DrawString(this.info, "Player Kills " + this.player.Kills, new Vector2(330, 20), Color.Azure);
+            spriteBatch.DrawString(this.info, "Enemy Health " + this.enemy.Health, new Vector2(620, 20), Color.Red);
+            spriteBatch.DrawString(this.info, "Player Kills " + this.player.Kills, new Vector2(330, 20), Color.BlanchedAlmond);
             this.player.Draw(spriteBatch, new Vector2(this.player.X, this.player.Y));
 
             if (this.enemy.IsAlive())
@@ -252,7 +286,16 @@ namespace AgetotonRPG
 
             if (this.player.Lives < 1)
             {
-                spriteBatch.DrawString(this.gameOver, "GAME OVER!", new Vector2(300, 300), Color.Red);
+                spriteBatch.DrawString(this.gameOver, "GAME OVER!", new Vector2(300, 150), Color.Red);
+                spriteBatch.DrawString(this.gameOver, "Press \"Space\" for new game", new Vector2(150, 500), Color.Red);
+                this.enemy.StopMove();
+                this.player.Die();
+                KeyboardState currentState = Keyboard.GetState();
+                if (currentState.IsKeyDown(Keys.Space))
+                {
+                    CreateNewGame();
+                }
+
             }
         }
     }

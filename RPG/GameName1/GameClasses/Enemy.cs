@@ -12,9 +12,9 @@ namespace AgetotonRPG.GameClasses
     public class Enemy : Creature
     {
         public Enemy
-            (Texture2D texture, float x, float y,EnemyComplexity complexity)
-            :base
-            (texture,x,y)
+            (Texture2D texture, float x, float y, EnemyComplexity complexity)
+            : base
+            (texture, x, y)
         {
             if (complexity == EnemyComplexity.Weak)
             {
@@ -22,19 +22,44 @@ namespace AgetotonRPG.GameClasses
                 base.Damage = WeakEnemyConstants.DAMAGE;
                 base.Speed = WeakEnemyConstants.SPEED;
             }
-            else if(complexity == EnemyComplexity.Average)
+            else if (complexity == EnemyComplexity.Average)
             {
-                base.Health = WeakEnemyConstants.HEALTH;
-                base.Damage = WeakEnemyConstants.DAMAGE;
-                base.Speed = WeakEnemyConstants.SPEED;
+                base.Health = AverageEnemyConstants.HEALTH;
+                base.Damage = AverageEnemyConstants.DAMAGE;
+                base.Speed = AverageEnemyConstants.SPEED;
             }
-            else if(complexity == EnemyComplexity.Strong)
+            else if (complexity == EnemyComplexity.Strong)
             {
                 base.Health = StrongEnemyConstants.HEALTH;
                 base.Damage = StrongEnemyConstants.DAMAGE;
                 base.Speed = StrongEnemyConstants.SPEED;
             }
 
+            base.CurrentDirection = Direction.Left;
+        }
+
+        public Enemy(Texture2D texture, float x, float y, Bosses boss)
+            : base
+            (texture, x, y)
+        {
+            if (boss == Bosses.Weak)
+            {
+                base.Health = EnemyBoss.WEAK_BOSS_HEALTH;
+                base.Damage = EnemyBoss.WEAK_BOSS_DAMAGE;
+                base.Speed = EnemyBoss.WEAK_BOSS_SPEED;
+            }
+            else if (boss == Bosses.Average)
+            {
+                base.Health = EnemyBoss.AVERAGE_BOSS_HEALTH;
+                base.Damage = EnemyBoss.AVERAGE_BOSS_DAMAGE;
+                base.Speed = EnemyBoss.AVERAGE_BOSS_SPEED;
+            }
+            else if (boss == Bosses.Strong)
+            {
+                base.Health = EnemyBoss.STRONG_BOSS_HEALTH;
+                base.Damage = EnemyBoss.STRONG_BOSS_DAMAGE;
+                base.Speed = EnemyBoss.STRONG_BOSS_SPEED;
+            }
             base.CurrentDirection = Direction.Left;
         }
         public override bool IsAlive()
@@ -116,12 +141,19 @@ namespace AgetotonRPG.GameClasses
                     break;
             }
         }
-
+        public void StopMove()
+        {
+            base.CanMoveLeft = false;
+            base.CanMoveRight = false;
+        }
         public void TryAtack()
         {
             if (base.X == base.Target.X && base.Y == base.Target.Y)
             {
-                base.Target.Health -= base.Damage;
+                if (base.Target.IsAlive())
+                {
+                    base.Target.Health -= base.Damage;
+                }
             }
         }
 

@@ -4,6 +4,7 @@
     {
         Weak,
         Average,
-        Strong
+        Strong,
+        Boss
     }
 }
